@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async lecture</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h1>Chai aur javaScript</h1>
+    <button id="start" 
+    style="border: 2px solid rgb(76, 95, 142);
+    border-radius: 8px;
+    margin-bottom: 4px;
+    background-color: #3f7571;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px";>Start</button>
+    <button id="stop" 
+    style="border: 2px solid rgb(76, 95, 142);
+    border-radius: 8px;
+    background-color: #c02e2e;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px";>Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    let intervalId;
+    // intervalId = setInterval(sayDate,2000,"Shubham Singh")
+    document.querySelector('#start').addEventListener('click', function(){
+        console.log("STARTED");
+        intervalId = setInterval(sayDate,2000,"Shubham Singh")
+
+    })
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+        console.log("STOPPED");
+    })
+
+</script>
+</html>

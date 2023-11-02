@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    // function addLanguage(langName){
+    //     const li = document.createElement('li')
+    //     const addText = document.createTextNode(`${langName}`)
+    //     li.appendChild(addText)
+    //     document.querySelector('.language')
+    //     .appendChild(li)
+    //     // li.innerHTML = `${langName}`
+    //     // document.querySelector('.language').appendChild(li)
+    // }
+
+    // addLanguage("Java") 
+    // addLanguage("Python")
+    // addLanguage("MySql")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language')
+        .appendChild(li)
+    }
+    
+    addOptiLanguage("Ruby")
+    addOptiLanguage("goland")
+
+    // edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    // secondLang.innerHTML = "Mojo"
+    const newLi = document.createElement("li")
+    newLi.textContent = 'Mojo'
+    secondLang.replaceWith(newLi)
+
+    // edit2
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</>'
+
+    // remove
+    const removeLang = document.querySelector('li:last-child')
+    removeLang.remove();
+    
+</script>
+
+</html>
